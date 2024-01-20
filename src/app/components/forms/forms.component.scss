@@ -39,12 +39,16 @@
     padding: 8px 4px;
     border-top: 1px solid var(--light-text);
 
-    &:nth-last-child(2) {
+    &:nth-last-child(3) {
       border-bottom: 1px solid var(--light-text);
-      margin-bottom: 32px;
+    }
+
+    input[type="radio"] {
+      cursor: pointer;
     }
 
     .period-label {
+      cursor: pointer;
       padding: 0 4px;
     }
 
@@ -52,5 +56,63 @@
       position: absolute;
       right: 0;
     }
+  }
+
+  .checkbox-wrapper {
+    color: var(--light-grey);
+    position: relative;
+    margin: 32px 0;
+    width: 100%;
+
+    .checkbox-text {
+      padding-left: 6px;
+    }
+
+    .checkbox-result {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  .btn-wrapper {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .btn {
+      cursor: pointer;
+      font-size: 14px;
+      border-radius: 4px;
+      color: var(--dark-grey);
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 12px;
+      border: none;
+      width: 25%;
+
+      &.btn-primary {
+        background-color: var(--yellow);
+
+        &:hover {
+          border: 1px solid black;
+          opacity: 0.8;
+        }
+      }
+      &.btn-secondary {
+        background-color: transparent;
+        border: 1px solid var(--light-text);
+
+        &:hover {
+          background-color: var(--yellow);
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  input[type="radio"]:checked {
+    accent-color: #ffb414;
   }
 }

@@ -19,8 +19,15 @@
     <label class="period-label" for="noite">Noite</label>
     <span class="time-range">18:01 às 23:00</span>
   </div>
-  <div>
+  <div class="checkbox-wrapper">
     <input type="checkbox" name="show-closed" id="" />
-    <label for="show-closed">Exibir unidades fechadas</label>
+    <label class="checkbox-text" for="show-closed"
+      >Exibir unidades fechadas</label
+    >
+    <span class="checkbox-result">Resultados encontrados: {{ results }}</span>
+  </div>
+  <div class="btn-wrapper">
+    <button class="btn btn-primary">Encontrar unidade</button>
+    <button class="btn btn-secondary">Limpar</button>
   </div>
 </form>
