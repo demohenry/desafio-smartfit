@@ -1,33 +1,46 @@
-<form class="form-group">
+<form class="form-group" [formGroup]="formGroup">
   <div class="form-icon">
     <img src="/assets/images/png/icon-hour.png" alt="" />
     Horário
   </div>
   <h3 class="form-main-question">Qual periodo você quer treinar?</h3>
   <div class="radio-wrapper">
-    <input type="radio" name="manha" value="manha" />
+    <input type="radio" name="hour" value="manha" formControlName="hour" />
     <label class="period-label" for="manha">Manhã</label>
     <span class="time-range">06:00 às 12:00</span>
   </div>
   <div class="radio-wrapper">
-    <input type="radio" name="tarde" value="tarde" />
+    <input type="radio" name="hour" value="tarde" formControlName="hour" />
     <label class="period-label" for="tarde">Tarde</label>
     <span class="time-range">12:01 às 18:00</span>
   </div>
   <div class="radio-wrapper">
-    <input type="radio" name="noite" value="noite" />
+    <input type="radio" name="hour" value="noite" formControlName="hour" />
     <label class="period-label" for="noite">Noite</label>
     <span class="time-range">18:01 às 23:00</span>
   </div>
   <div class="checkbox-wrapper">
-    <input type="checkbox" name="show-closed" id="" />
-    <label class="checkbox-text" for="show-closed"
-      >Exibir unidades fechadas</label
-    >
+    <div class="checkbox">
+      <input
+        type="checkbox"
+        name="showClosed"
+        id=""
+        formControlName="showClosed"
+      />
+      <label class="checkbox-text" for="showClosed"
+        >Exibir unidades fechadas</label
+      >
+    </div>
     <span class="checkbox-result">Resultados encontrados: {{ results }}</span>
   </div>
   <div class="btn-wrapper">
-    <button class="btn btn-primary">Encontrar unidade</button>
-    <button class="btn btn-secondary">Limpar</button>
+    <button
+      class="btn btn-primary"
+      (click)="onSubmit()"
+      [disabled]="isAOptionNotSelected"
+    >
+      Encontrar unidade
+    </button>
+    <button class="btn btn-secondary" (click)="onCleanForm()">Limpar</button>
   </div>
 </form>
