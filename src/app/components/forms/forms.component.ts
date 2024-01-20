@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-forms',
@@ -10,13 +10,11 @@ export class FormsComponent implements OnInit {
   formGroup!: FormGroup;
   results = [0];
 
-  isAOptionNotSelected: boolean = false;
-
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.formGroup = this.formBuilder.group({
-      hour: '',
+      hour: ['', Validators.required],
       showClosed: false,
     });
   }
