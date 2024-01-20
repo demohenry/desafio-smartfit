@@ -64,7 +64,12 @@
     margin: 32px 0;
     width: 100%;
 
+    [type="checkbox"] {
+      cursor: pointer;
+    }
+
     .checkbox-text {
+      cursor: pointer;
       padding-left: 6px;
     }
 
