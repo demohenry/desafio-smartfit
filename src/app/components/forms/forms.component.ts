@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-forms',
@@ -6,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forms.component.scss'],
 })
 export class FormsComponent implements OnInit {
-  results = [];
+  formGroup!: FormGroup;
+  results = [0];
 
-  constructor() {}
+  isAOptionNotSelected: boolean = false;
 
-  ngOnInit(): void {}
+  constructor(private formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.formGroup = this.formBuilder.group({
+      hour: '',
+      showClosed: false,
+    });
+  }
+
+  onSubmit() {
+    console.log(this.formGroup);
+  }
+
+  onCleanForm() {
+    this.formGroup.reset();
+  }
 }
