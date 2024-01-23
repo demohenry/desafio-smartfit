@@ -42,10 +42,10 @@
       <input
         type="checkbox"
         name="showClosed"
-        id=""
+        id="showClosed"
         formControlName="showClosed"
       />
-      <label class="checkbox-text" for="showClosed"
+      <label class="checkbox-text" id="showClosed" for="showClosed"
         >Exibir unidades fechadas</label
       >
     </div>
@@ -55,6 +55,7 @@
     <button
       class="btn btn-primary"
       (click)="onSubmit()"
+      [title]="!formGroup.valid ? 'Escolha uma opção' : ''"
       [disabled]="!formGroup.valid"
     >
       Encontrar unidade
